@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Config/etc/system_file.xsd">
+	<system>
+	<tab id="mailboxvalidator" translate="label" sortOrder="20" >
+            <label>Mailboxvalidator</label>
+	</tab>
+
+	<section id="mailboxvalidator" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+		<label>Mailboxvalidator_EmailValidator</label>
+		<tab>mailboxvalidator</tab>
+		<resource>Mailboxvalidator_EmailValidator::mailboxvalidator_emailvalidator</resource>
+		<group id="active_display" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+			<field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Enable</label>
+				<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+			</field>
+			<field id="api_key" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>API Key</label>
+                    <comment><![CDATA[You can sign up a free API key at <a href="https://www.mailboxvalidator.com/plans#api" target="_blank">here</a> if you do not have one.]]></comment>
+			</field>
+			<field id="validate_invalid" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Block Invalid Email</label>
+				<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+			</field>
+			<field id="invalid_error_message" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Error Message for Invalid Email</label>
+			</field>
+			<field id="validate_disposable" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Block Disposable Email</label>
+				<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+			</field>
+			<field id="disposable_error_message" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Error Message for Disposable Email</label>
+			</field>
+			<field id="validate_free" translate="label" type="select" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Block Free Email</label>
+				<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+			</field>
+			<field id="free_error_message" translate="label" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Error Message for Free Email</label>
+			</field>
+			<field id="validate_role" translate="label" type="select" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Block Role-Based Email</label>
+				<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+			</field>
+			<field id="role_error_message" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Error Message for Role-Based Email</label>
+			</field>
+		</group>
+	</section>
+	</system>
+</config>
