@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Customer\Controller\Account\CreatePost">
+        <plugin name="Mailboxvalidator_EmailValidator_Plugin" type="MailboxValidator\EmailValidator\Plugin\Validateregistrationform" sortOrder="10" disabled="false"  />
+    </type>
+    <type name="Magento\Contact\Controller\Index\Post">
+        <plugin name="Mailboxvalidator_EmailValidator_Plugin" type="MailboxValidator\EmailValidator\Plugin\Validatecontactform" sortOrder="10" disabled="false"  />
+    </type>
+</config>
