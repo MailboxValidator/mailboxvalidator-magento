@@ -1,4 +1,4 @@
-MailboxValidator Magento 2 Extension
+# MailboxValidator Magento 2 Extension
 
 MailboxValidator Magento 2 extension enables user to easily validate if an email address is valid, a type of disposable email or free email.
 
@@ -23,7 +23,7 @@ To install this extension, you will need to:
 
 1. Download the latest release from GitHub repo.
 2. Create a folder and name as MailboxValidator.
-3. Unzip the file downloaded, rename it to Email Validator and transfer it into MailboxValidator folder.
+3. Unzip the file downloaded, rename it to EmailValidator and transfer it into MailboxValidator folder.
 4. Upload the MailboxValidator folder to the subdirectory of Magento installation root directory as: magento2/app/code/
 5. Login to the Magento admin page and disable the cache under the System -> Cache Management page.
 6. Go to our terminal, change the path to Magento root directory, and execute the following command: 
