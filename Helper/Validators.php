@@ -1,6 +1,6 @@
 <?php
  
-namespace Hexasoft\MailboxValidator\Helper;
+namespace MailboxValidator\EmailValidator\Helper;
  
 class Validators extends \Magento\Framework\App\Helper\AbstractHelper
 {
@@ -76,7 +76,7 @@ class Validators extends \Magento\Framework\App\Helper\AbstractHelper
 
 			$results = $this->http( $url );
 
-			if ( !is_wp_error( $results ) ) {
+			if ( $results != false ) {
 				// Decode the return json results and return the data.
 				$data = json_decode( $results, true );
 				
@@ -114,7 +114,7 @@ class Validators extends \Magento\Framework\App\Helper\AbstractHelper
 
 			$results = $this->http( $url );
 
-			if ( !is_wp_error( $results ) ) {
+			if ( $results != false ) {
 				// Decode the return json results and return the data.
 				$data = json_decode($results, true);
 				
