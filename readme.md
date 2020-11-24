@@ -1,4 +1,4 @@
-#MailboxValidator Magento 2 Extension
+# MailboxValidator Magento 2 Extension
 
 MailboxValidator Magento 2 extension enables user to easily validate if an email address is valid, a type of disposable email or free email.
 
