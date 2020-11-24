@@ -1,13 +1,14 @@
 <?php
 namespace Hexasoft\MailboxValidator\Plugin;
 
-use Magento\Framework\Controller\ResultFactory;
+// use Magento\Framework\Controller\ResultFactory;
+use Magento\Framework\Controller\ResultFactory as resultFactory;
 
 use Magento\Framework\App\Request\DataPersistorInterface;
 
 use Magento\Framework\Controller\Result\Redirect;
 
-class Validatecontactform
+class Validatenewsletter
 {
 	
 	/**
@@ -34,16 +35,24 @@ class Validatecontactform
 	protected $resultRedirectFactory;
 	
 	/**
+     * @var \Magento\Framework\Controller\ResultFactory
+     */
+	
+	protected $resultFactory;
+	
+	/**
      * @var \MailboxValidator\EmailValidator\Helper\Validators
      */
 	
 	protected $validators;
 
     public function __construct(
+		resultFactory $resultFactory,
 		DataPersistorInterface $dataPersistor,
 		\Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
 		\Magento\Framework\Controller\Result\RedirectFactory $resultRedirectFactory,
 		\Magento\Framework\Message\ManagerInterface $messageManager,
+		\Magento\Framework\App\Response\RedirectInterface $_redirect,
 		\Hexasoft\MailboxValidator\Helper\Validators $validators
     )
 	{
@@ -52,9 +61,11 @@ class Validatecontactform
 		$this->dataPersistor = $dataPersistor;
 		$this->resultRedirectFactory = $resultRedirectFactory;
 		$this->validators = $validators;
+		$this->resultFactory = $resultFactory;
+		$this->_redirect = $_redirect;
 	}
 	
-	public function aroundExecute (\Magento\Contact\Controller\Index\Post $subject, \Closure $proceed)
+	public function aroundExecute (\Magento\Newsletter\Controller\Subscriber\NewAction $subject, \Closure $proceed)
 	{
 		if ($this->scopeConfig->getValue('mailboxvalidator/active_display/active', \Magento\Store\Model\ScopeInterface::SCOPE_STORE)) {
 			// the config path can get from system.xml, format is section_id/group_id/field_id
@@ -75,8 +86,10 @@ class Validatecontactform
 				} else if ($isRole === true) {
 					$this->messageManager->addErrorMessage(__(($this->scopeConfig->getValue('mailboxvalidator/active_display/role_error_message', \Magento\Store\Model\ScopeInterface::SCOPE_STORE) != '') ? $this->scopeConfig->getValue('mailboxvalidator/active_display/role_error_message', \Magento\Store\Model\ScopeInterface::SCOPE_STORE) : 'Please enter a non-role-based email address.'));
 				}
-				$this->dataPersistor->set('contact_us', $subject->getRequest()->getParams());
-				return $this->resultRedirectFactory->create()->setPath('contact/index');
+				/** @var Redirect $redirect */
+				$redirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
+				$redirectUrl = $this->_redirect->getRedirectUrl();
+				return $redirect->setUrl($redirectUrl);
 			}
 		}
 		return $proceed();
