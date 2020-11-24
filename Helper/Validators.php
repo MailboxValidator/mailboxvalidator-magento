@@ -1,6 +1,6 @@
 <?php
  
-namespace MailboxValidator\EmailValidator\Helper;
+namespace Hexasoft\MailboxValidator\Helper;
  
 class Validators extends \Magento\Framework\App\Helper\AbstractHelper
 {
