@@ -25,7 +25,7 @@ To install this extension, you will need to:
 3. Unzip the file downloaded, rename it to MailboxValidator and transfer it into Hexasoft folder.
 4. Upload the Hexasoft folder to the subdirectory of Magento installation root directory as: magento2/app/code/
 5. Login to the Magento admin page and disable the cache under the System -> Cache Management page.
-6. Go to our terminal, change the path to Magento root directory, and execute the following command: 
+6. Go to the terminal, change the path to Magento root directory, and execute the following command: 
 ```bash
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
