@@ -4,7 +4,6 @@ MailboxValidator Magento 2 extension enables user to easily validate if an email
 
 This extension can be useful in many types of projects, for example
 
-- to validate an user's email during sign up
 - to clean your mailing list prior to email sending
 - to perform fraud check
 - and so on
