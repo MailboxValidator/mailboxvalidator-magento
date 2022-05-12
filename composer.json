@@ -1,10 +1,10 @@
 {
     "name": "hexasoft/module-mailboxvalidator",
     "description": "MailboxValidator Magento 2 extension enables you to block invalid, disposable, free or role-based email from using your service. This extension perform real time validation to verify email address.",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "magento2-module",
     "require": {
-        "php": "~5.5.0|~5.6.0|~7.0"
+        "php": ">=5.5"
     },
     "license": [
         "OSL-3.0",
