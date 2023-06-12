@@ -31,6 +31,8 @@ php bin/magento setup:upgrade
 php bin/magento setup:di:compile
 ```
 
+You can also read the **User Guides** in documentation section from here: https://marketplace.magento.com/hexasoft-module-mailboxvalidator.html
+
 ## Copyright
 
-Copyright(C) 2021 by MailboxValidator.com.
+Copyright(C) 2023 by MailboxValidator.com.
