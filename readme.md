@@ -35,4 +35,4 @@ You can also read the **User Guides** in documentation section from here: https:
 
 ## Copyright
 
-Copyright(C) 2023 by MailboxValidator.com.
+Copyright(C) 2024 by MailboxValidator.com.
